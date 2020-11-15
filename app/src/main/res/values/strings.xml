@@ -14,8 +14,15 @@
     <string name="enter_password">Enter Password:</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Strings related to Welcome Screen -->
+    <string name="welcome_text1">Welcome to Shoe Store</string>
+    <string name="welcome_text2">A shoe store or shoe shop is a type of retailer that specializes
+        in selling shoes. From slippers to athletic shoes to boots, the store could also sell shoe
+        accessories, including insoles, shoelaces, shoe horns, shoe polish, etc.
+        In addition, shoe stores may provide clothing and fashion accessories, such as handbags,
+        sunglasses, backpacks, socks, and hosiery.</string>
+    <string name="welcome_button_text">See Instructions</string>
+    <string name="login_header_text">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>
