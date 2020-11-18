@@ -29,5 +29,16 @@
         android:id="@+id/instructionFragment"
         android:name="com.phalder.shoestoreapp.instructions.InstructionFragment"
         android:label="fragment_instruction"
-        tools:layout="@layout/fragment_instruction" />
+        tools:layout="@layout/fragment_instruction" >
+        <action
+            android:id="@+id/action_instructionFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.phalder.shoestoreapp.shoelist.ShoeListFragment"
+        android:label="shoe_list_fragment"
+        tools:layout="@layout/shoe_list_fragment" />
 </navigation>

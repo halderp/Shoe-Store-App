@@ -32,6 +32,9 @@
     <string name="instruction_2_text">Browse through all the shoes in the store by swiping up or swiping down</string>
     <string name="instruction_3_text">Click + Button to add new shoe in your inventory. Enter the details and click on Save</string>
     <string name="instruction_button_text">View Store Items</string>
+
+    <!-- Strings related to Shoe Details Screen -->
+    <string name="add_shoe_text">floatingActionButton</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>
