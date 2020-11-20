@@ -11,7 +11,7 @@
 
         <TextView
             android:id="@+id/intsruction_header"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
@@ -19,7 +19,7 @@
             android:fontFamily="@font/adamina"
             android:text="@string/instructions_header_text"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

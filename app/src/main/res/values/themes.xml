@@ -16,6 +16,8 @@
 
     <style name="Theme.ShoeStoreApp.Splash" parent="Theme.AppCompat.NoActionBar">
         <!-- Drawable for Splash brand color. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/launch_screen</item>
 
     </style>
@@ -24,4 +26,5 @@
         <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
         <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
+
 </resources>

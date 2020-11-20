@@ -46,6 +46,9 @@
     <string name="enter_size">Enter Size Here....</string>
     <string name="enter_description">Enter Shoe Description:</string>
     <string name="shoe_description">Enter Description Here .....</string>
-
+    <string name="default_shoename">Nike Air Max Plus 1</string>
+    <string name="default_company">Nike</string>
+    <string name="default_shoesize">6.0</string>
+    <string name="default_shoedescription">The Nike Air Max Plus brings you legendary "Tuned" Air cushioning for extra comfort.</string>
 
 </resources>
