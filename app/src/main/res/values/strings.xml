@@ -50,5 +50,7 @@
     <string name="default_company">Nike</string>
     <string name="default_shoesize">6.0</string>
     <string name="default_shoedescription">The Nike Air Max Plus brings you legendary "Tuned" Air cushioning for extra comfort.</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

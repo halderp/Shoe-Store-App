@@ -16,8 +16,6 @@
 
     <style name="Theme.ShoeStoreApp.Splash" parent="Theme.AppCompat.NoActionBar">
         <!-- Drawable for Splash brand color. -->
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/launch_screen</item>
 
     </style>

@@ -3,7 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/spalshFragment">
+    <fragment
+        android:id="@+id/spalshFragment"
+        android:name="com.phalder.shoestoreapp.splash.SpalshFragment"
+        android:label="fragment_spalsh"
+        tools:layout="@layout/fragment_spalsh" >
+        <action
+            android:id="@+id/action_spalshFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/spalshFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_spalshFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.phalder.shoestoreapp.login.LoginFragment"
@@ -13,7 +27,9 @@
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out" />
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -34,7 +50,9 @@
             android:id="@+id/action_instructionFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out" />
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/shoeListFragment"

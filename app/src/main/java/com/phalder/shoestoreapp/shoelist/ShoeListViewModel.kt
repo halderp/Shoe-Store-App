@@ -8,6 +8,9 @@ import com.phalder.shoestoreapp.models.Shoe
 
 class ShoeListViewModel : ViewModel() {
 
+    private var isLoggedIn: Boolean = false
+    val isLoggedInLiveData = MutableLiveData<Boolean>()
+
     private lateinit var shoeList: MutableList<Shoe>
     private val _shoeListLiveData = MutableLiveData<List<Shoe>>()
     val shoeListLiveData : LiveData<List<Shoe>>
@@ -15,8 +18,11 @@ class ShoeListViewModel : ViewModel() {
     // Constructor
     init {
         Log.i("ShoeListViewModel","ShoeListViewModel Created")
+        isLoggedInLiveData.value = isLoggedIn
         seedDataInShoeList()
     }
+
+
 
     private fun seedDataInShoeList() {
         // Add some shoes
@@ -42,5 +48,10 @@ class ShoeListViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         Log.i("ShoeListViewModel","ShoeListViewModel Destroyed")
+    }
+
+    fun logInCompleted(){
+        isLoggedIn = true
+        isLoggedInLiveData.value = isLoggedIn
     }
 }
