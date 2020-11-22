@@ -8,6 +8,12 @@ import com.phalder.shoestoreapp.models.Shoe
 
 class ShoeListViewModel : ViewModel() {
 
+    //Bindable Edittext Properties
+    val editTextShoeNameContent = MutableLiveData<String>()
+    val editTextShoeCompanyContent = MutableLiveData<String>()
+    val editTextShoeSizeContent = MutableLiveData<String>()
+    val editTextShoeDescriptionContent = MutableLiveData<String>()
+
     private var isLoggedIn: Boolean = false
     val isLoggedInLiveData = MutableLiveData<Boolean>()
 
@@ -38,11 +44,28 @@ class ShoeListViewModel : ViewModel() {
 
     }
 
-    fun addShoeToList(newShoe:Shoe){
-        // this should update the Live Data of Shoe List and UI will get updated accordingly
-        shoeList.add(newShoe)
+    fun addShoeToList(){
+
+        //validate inputs add them if they are non-empty. else so error handling can be done or user can be notified
+
+        if (validateInputs(editTextShoeNameContent.value.toString(), editTextShoeSizeContent.value.toString(),  editTextShoeCompanyContent.value.toString(), editTextShoeDescriptionContent.value.toString())){
+            var newShoe: Shoe = Shoe(editTextShoeNameContent.value.toString(),
+                editTextShoeSizeContent.value.toString().toDouble(),
+                editTextShoeCompanyContent.value.toString(),
+                editTextShoeDescriptionContent.value.toString())
+            shoeList.add(newShoe)
+        }
 
     }
+
+    private fun validateInputs(shoeName:String,shoeSize:String,shoeCompany:String,shoeDescription:String):Boolean{
+
+        return (shoeName.trim().length == 0 ||
+                shoeSize.trim().length == 0 ||
+                shoeCompany.trim().length == 0 ||
+                shoeDescription.trim().length == 0)
+    }
+
 
     // Destructor
     override fun onCleared() {

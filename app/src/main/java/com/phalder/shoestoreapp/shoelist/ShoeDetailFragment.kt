@@ -32,6 +32,9 @@ class ShoeDetailFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_shoe_detail, container, false)
         (activity as AppCompatActivity).supportActionBar?.title = "Add Shoe"
 
+        binding.shoelistVM = viewModel
+        binding.setLifecycleOwner (this)
+
         binding.buttonCancel.setOnClickListener {view: View ->
             goBackToShoeList(view)
         }
@@ -45,35 +48,10 @@ class ShoeDetailFragment : Fragment() {
         view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
     }
 
-    private fun validateInputs(shoeName:String,shoeSize:String,shoeCompany:String,shoeDescription:String):Boolean{
 
-        return (shoeName.trim().length == 0 ||
-                shoeSize.trim().length == 0 ||
-                shoeCompany.trim().length == 0 ||
-                shoeDescription.trim().length == 0)
-    }
     private fun saveNewShoeAndGoBackToShoeList(view: View) {
-
-        var shoeName = binding.editTextTextShoeName.text.toString()
-        var shoeSize = binding.editTextShoeSizeDecimal.text.toString()
-        var shoeCompany = binding.editTextTextCompanyName.text.toString()
-        var shoeDescription = binding.editTextTextDescription.text.toString()
-
-        // check of empty inputs
-        if (validateInputs(shoeName,shoeSize,shoeCompany,shoeDescription)){
+            viewModel.addShoeToList()
             goBackToShoeList(view)
-        } else {
-
-            var newShoe: Shoe = Shoe(
-                name = shoeName,
-                size = shoeSize.toDouble(),
-                company = shoeCompany,
-                description = shoeDescription
-            )
-
-            viewModel.addShoeToList(newShoe)
-            goBackToShoeList(view)
-        }
     }
 
 }

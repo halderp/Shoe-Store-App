@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".shoelist.ShoeDetailFragment">
+    <data>
+        <variable
+            name="shoelistVM"
+            type="com.phalder.shoestoreapp.shoelist.ShoeListViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoeDetailMainLayout"
@@ -31,7 +36,7 @@
             android:background="@drawable/edittext_border"
             android:ems="10"
             android:hint="@string/shoe_name"
-            android:text="@string/default_shoename"
+            android:text="@={shoelistVM.editTextShoeNameContent}"
             android:inputType="textPersonName"
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +61,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_border"
-            android:text="@string/default_company"
+            android:text="@={shoelistVM.editTextShoeCompanyContent}"
             android:ems="10"
             android:hint="@string/company_name"
             android:inputType="textPersonName"
@@ -83,7 +88,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_border"
-            android:text="@string/default_shoesize"
+            android:text="@={shoelistVM.editTextShoeSizeContent}"
             android:ems="10"
             android:hint="@string/enter_size"
             android:inputType="numberDecimal"
@@ -111,7 +116,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/edittext_border"
-            android:text="@string/default_shoedescription"
+            android:text="@={shoelistVM.editTextShoeDescriptionContent}"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/shoe_description"
