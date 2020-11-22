@@ -60,10 +60,10 @@ class ShoeListViewModel : ViewModel() {
 
     private fun validateInputs(shoeName:String,shoeSize:String,shoeCompany:String,shoeDescription:String):Boolean{
 
-        return (shoeName.trim().length == 0 ||
-                shoeSize.trim().length == 0 ||
-                shoeCompany.trim().length == 0 ||
-                shoeDescription.trim().length == 0)
+        return (shoeName.trim().length != 0 &&
+                shoeSize.trim().length != 0 &&
+                shoeCompany.trim().length != 0 &&
+                shoeDescription.trim().length != 0)
     }
 
 

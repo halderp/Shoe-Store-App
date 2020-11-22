@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
+    android:id="@+id/navigation_graph"
     app:startDestination="@id/spalshFragment">
     <fragment
         android:id="@+id/spalshFragment"
         android:name="com.phalder.shoestoreapp.splash.SpalshFragment"
-        android:label="fragment_spalsh"
+        android:label="Splash Screen"
         tools:layout="@layout/fragment_spalsh" >
         <action
             android:id="@+id/action_spalshFragment_to_loginFragment"
