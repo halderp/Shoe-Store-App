@@ -28,8 +28,6 @@ class ShoeListViewModel : ViewModel() {
         seedDataInShoeList()
     }
 
-
-
     private fun seedDataInShoeList() {
         // Add some shoes
         shoeList = mutableListOf<Shoe>()
@@ -54,6 +52,12 @@ class ShoeListViewModel : ViewModel() {
                 editTextShoeCompanyContent.value.toString(),
                 editTextShoeDescriptionContent.value.toString())
             shoeList.add(newShoe)
+
+            //clear the values of the edittexts
+            editTextShoeNameContent.value = ""
+            editTextShoeSizeContent.value =""
+            editTextShoeCompanyContent.value=""
+            editTextShoeDescriptionContent.value=""
         }
 
     }

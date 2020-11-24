@@ -45,7 +45,8 @@ class ShoeDetailFragment : Fragment() {
     }
 
     private fun goBackToShoeList(view: View){
-        view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+        //view.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+        findNavController(this).popBackStack()
     }
 
     private fun logOutUser(){

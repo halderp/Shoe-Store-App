@@ -25,7 +25,6 @@ class InstructionFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_instruction, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Instructions"
 
         binding.instructionButton.setOnClickListener {view: View ->
             view.findNavController().navigate(R.id.action_instructionFragment_to_shoeListFragment)

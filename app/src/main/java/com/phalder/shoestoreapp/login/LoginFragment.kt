@@ -39,6 +39,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun finishLogIn(view: View) {
+
+        // update viewmodel that login is completed
         viewModel.logInCompleted()
         view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
     }
