@@ -27,9 +27,9 @@
 
     <!-- Strings related to Instruction Screen -->
     <string name="instructions_header_text">Instructions:</string>
-    <string name="instruction_1_text">Navigate to Shoe List screen</string>
-    <string name="instruction_2_text">Browse through all the shoes in the store by swiping up or swiping down</string>
-    <string name="instruction_3_text">Click + Button to add new shoe in your inventory. Enter the details and click on Save</string>
+    <string name="instruction_1_text">1.Navigate to Shoe List screen. You can view all you shoe inventory.</string>
+    <string name="instruction_2_text">2.Browse through all the shoes in the store by swiping up or swiping down</string>
+    <string name="instruction_3_text">3.Click + Button to add new shoe in your inventory. Enter the details and click on Save</string>
     <string name="instruction_button_text">View Store Items</string>
 
     <!-- Strings related to Shoe List Screen -->
@@ -52,5 +52,6 @@
     <string name="default_shoedescription">The Nike Air Max Plus brings you legendary "Tuned" Air cushioning for extra comfort.</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="logout_text">Logout</string>
 
 </resources>

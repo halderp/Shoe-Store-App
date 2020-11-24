@@ -29,7 +29,6 @@ class ShoeListFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.shoe_list_fragment, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Shoe List"
         binding.floatingActionButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
         }

@@ -48,7 +48,7 @@ class ShoeListViewModel : ViewModel() {
 
         //validate inputs add them if they are non-empty. else so error handling can be done or user can be notified
 
-        if (validateInputs(editTextShoeNameContent.value.toString(), editTextShoeSizeContent.value.toString(),  editTextShoeCompanyContent.value.toString(), editTextShoeDescriptionContent.value.toString())){
+        if (validateInputs(editTextShoeNameContent.value, editTextShoeSizeContent.value, editTextShoeCompanyContent.value, editTextShoeDescriptionContent.value)){
             var newShoe: Shoe = Shoe(editTextShoeNameContent.value.toString(),
                 editTextShoeSizeContent.value.toString().toDouble(),
                 editTextShoeCompanyContent.value.toString(),
@@ -58,12 +58,14 @@ class ShoeListViewModel : ViewModel() {
 
     }
 
-    private fun validateInputs(shoeName:String,shoeSize:String,shoeCompany:String,shoeDescription:String):Boolean{
+    private fun validateInputs(shoeName:String?,shoeSize:String?,shoeCompany:String?,shoeDescription:String?):Boolean{
 
-        return (shoeName.trim().length != 0 &&
-                shoeSize.trim().length != 0 &&
-                shoeCompany.trim().length != 0 &&
-                shoeDescription.trim().length != 0)
+        if (shoeName.isNullOrEmpty() || shoeSize.isNullOrEmpty() || shoeCompany.isNullOrEmpty() || shoeDescription.isNullOrEmpty())
+            return false;
+       if (shoeName.trim().length == 0 ||  !shoeSize.isNotEmpty() ||  shoeCompany.trim().length == 0 || shoeDescription.trim().length == 0)
+           return false
+
+        return true
     }
 
 

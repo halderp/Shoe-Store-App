@@ -29,7 +29,6 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?  ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Welcome"
 
         binding.welcomeButton.setOnClickListener {view: View ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_instructionFragment)

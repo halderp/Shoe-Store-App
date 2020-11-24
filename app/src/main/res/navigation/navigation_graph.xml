@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.phalder.shoestoreapp.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="Login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
@@ -34,7 +34,7 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.phalder.shoestoreapp.welcome.WelcomeFragment"
-        android:label="WelcomeFragment">
+        android:label="Welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionFragment"
             app:destination="@id/instructionFragment"
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/instructionFragment"
         android:name="com.phalder.shoestoreapp.instructions.InstructionFragment"
-        android:label="fragment_instruction"
+        android:label="Instructions"
         tools:layout="@layout/fragment_instruction" >
         <action
             android:id="@+id/action_instructionFragment_to_shoeListFragment"
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/shoeListFragment"
         android:name="com.phalder.shoestoreapp.shoelist.ShoeListFragment"
-        android:label="shoe_list_fragment"
+        android:label="Shoe List"
         tools:layout="@layout/shoe_list_fragment" >
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
@@ -68,11 +68,16 @@
     <fragment
         android:id="@+id/shoeDetailFragment"
         android:name="com.phalder.shoestoreapp.shoelist.ShoeDetailFragment"
-        android:label="fragment_shoe_detail"
+        android:label="Add Shoe"
         tools:layout="@layout/fragment_shoe_detail" >
         <action
             android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
             app:popUpTo="@id/shoeListFragment"
             app:popUpToInclusive="true" />
     </fragment>

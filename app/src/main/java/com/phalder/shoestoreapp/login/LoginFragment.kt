@@ -35,7 +35,6 @@ class LoginFragment : Fragment() {
         binding.loginExisting.setOnClickListener {view: View ->
             finishLogIn(view)
         }
-        (activity as AppCompatActivity).supportActionBar?.title = "Login"
         return binding.root
     }
 
