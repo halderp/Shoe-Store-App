@@ -3,16 +3,15 @@ package com.phalder.shoestoreapp.shoelist
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.phalder.shoestoreapp.R
 import com.phalder.shoestoreapp.databinding.FragmentInstructionBinding
 import com.phalder.shoestoreapp.databinding.ShoeListFragmentBinding
@@ -32,6 +31,7 @@ class ShoeListFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
         }
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -66,6 +66,21 @@ class ShoeListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.logout_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.logout -> logOutUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    private fun logOutUser(){
+        NavHostFragment.findNavController(this).navigate(R.id.action_shoeListFragment_to_loginFragment)
     }
 
 }

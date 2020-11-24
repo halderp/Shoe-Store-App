@@ -40,7 +40,6 @@ class ShoeDetailFragment : Fragment() {
         binding.buttonSave.setOnClickListener {view: View ->
             saveNewShoeAndGoBackToShoeList(view)
         }
-        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -49,25 +48,9 @@ class ShoeDetailFragment : Fragment() {
         findNavController(this).popBackStack()
     }
 
-    private fun logOutUser(){
-        findNavController(this).navigate(R.id.action_shoeDetailFragment_to_loginFragment)
-    }
-
-
     private fun saveNewShoeAndGoBackToShoeList(view: View) {
             viewModel.addShoeToList()
             goBackToShoeList(view)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.logout_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.logout -> logOutUser()
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

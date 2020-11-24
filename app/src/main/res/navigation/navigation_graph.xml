@@ -25,7 +25,9 @@
             android:id="@+id/action_welcomeFragment_to_instructionFragment"
             app:destination="@id/instructionFragment"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out" />
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/instructionFragment"
@@ -49,21 +51,20 @@
             android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
             app:destination="@id/shoeDetailFragment"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out" />
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shoeListFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/shoeListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
         android:name="com.phalder.shoestoreapp.shoelist.ShoeDetailFragment"
         android:label="ADD SHOE"
-        tools:layout="@layout/fragment_shoe_detail" >
-        <action
-            android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
-            app:popUpTo="@id/shoeListFragment"
-            app:popUpToInclusive="false" />
-        <action
-            android:id="@+id/action_shoeDetailFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/shoeListFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        tools:layout="@layout/fragment_shoe_detail" />
 </navigation>
